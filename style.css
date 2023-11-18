@@ -11,11 +11,15 @@ body {
 	font-size: 24px;
 	font-family: 'Roboto';
 }
+ul {
+	list-style: none;
+}
 .main {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 	margin-top: 20px;
 }
 
@@ -25,15 +29,14 @@ body {
 	background-color: #fff;
 	outline: none;
 	font-size: 2rem;
+	width: 400px;
 }
 
 .autocomplete__list {
-	list-style: none;
 	background-color: #e3e3e3;
 }
 .autocomplete__list-item {
 	border: 2px #000 solid;
-	padding-left: 13px;
 	display: flex;
 	font-size: 1.25rem;
 }
@@ -41,6 +44,7 @@ body {
 	border: none;
 	outline: none;
 	padding: 0;
+	padding-left: 13px;
 	padding-block: 0;
 	background-color: transparent;
 	cursor: pointer;
@@ -48,4 +52,72 @@ body {
 	width: 100%;
 	font-size: inherit;
 	font-family: 'Roboto';
+}
+
+.autocomplete__list-item > button:hover,
+.autocomplete__list-item > button:focus {
+	background-color: #65cdf9;
+}
+
+.content {
+	width: 400px;
+	margin-top: 50px;
+}
+
+.repo__card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #000;
+	background-color: #e27beb;
+	padding: 8px 16px;
+}
+
+.information {
+	display: flex;
+	flex-direction: column;
+}
+
+.information > span {
+	display: block;
+}
+
+.delete__repo-btn {
+	width: 20px;
+	height: 20px;
+	appearance: none;
+	position: relative;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+@keyframes shake {
+	25%,
+	75% {
+		transform: rotate(20deg);
+	}
+	50%,
+	100% {
+		transform: rotate(0deg);
+	}
+}
+.delete__repo-btn:hover {
+	animation: shake 0.5s ease forwards;
+}
+
+.delete__repo-btn::after,
+.delete__repo-btn::before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	background-color: red;
+	height: 100%;
+	top: 0;
+}
+.delete__repo-btn::after {
+	transform: rotate(-45deg);
+}
+.delete__repo-btn::before {
+	transform: rotate(45deg);
 }
