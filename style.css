@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #c4c4c4;
+	font-size: 24px;
+	font-family: 'Roboto';
+}
+.main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.search {
+	padding: 5px 13px;
+	border: none;
+	background-color: #fff;
+	outline: none;
+	font-size: 2rem;
+}
+
+.autocomplete__list {
+	list-style: none;
+	background-color: #e3e3e3;
+}
+.autocomplete__list-item {
+	border: 2px #000 solid;
+	padding-left: 13px;
+	display: flex;
+	font-size: 1.25rem;
+}
+.autocomplete__list-item button {
+	border: none;
+	outline: none;
+	padding: 0;
+	padding-block: 0;
+	background-color: transparent;
+	cursor: pointer;
+	text-align: start;
+	width: 100%;
+	font-size: inherit;
+	font-family: 'Roboto';
+}
