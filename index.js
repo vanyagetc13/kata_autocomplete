@@ -1,5 +1,3 @@
-const auth_token =
-	'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'
 const fetchUrl = 'https://api.github.com/search/repositories'
 const autocompleteListNode = document.getElementById('autocomplete__list')
 const repoListNode = document.getElementById('repos__list')
@@ -79,7 +77,7 @@ function callApi(query) {
 	fetch(url, {
 		headers: {
 			accept: 'application/vnd.github+jso',
-			Authorization: auth_token,
+			// Authorization: auth_token,
 		},
 	})
 		.then(r => r.json())
