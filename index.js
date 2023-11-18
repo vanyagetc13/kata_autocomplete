@@ -66,10 +66,15 @@ function debounceDecorator(fn, ms) {
 	}
 }
 function updateAutoCompleteList() {
-	autocompleteListNode.innerHTML = autocompleteList.getHtml()
+	autocompleteListNode.innerHTML = ''
+	autocompleteListNode.insertAdjacentHTML(
+		'beforeend',
+		autocompleteList.getHtml()
+	)
 }
 function updateRepoList() {
-	repoListNode.innerHTML = repoList.getHtml()
+	repoListNode.innerHTML = ''
+	repoListNode.insertAdjacentHTML('beforeend', repoList.getHtml())
 }
 function callApi(query) {
 	const url = fetchUrl + '?q=' + query + '&per_page=5' // + '&sort=stars'
@@ -98,10 +103,10 @@ function callApi(query) {
 			updateAutoCompleteList()
 		})
 }
-callApi = debounceDecorator(callApi, 300)
+callApi = debounceDecorator(callApi, 400)
 
 searchInput.addEventListener('input', e => {
-	const value = e.target.value
+	const value = e.target.value.trim()
 	if (value === '') {
 		autocompleteList.set([])
 		updateAutoCompleteList()
