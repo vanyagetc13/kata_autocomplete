@@ -102,6 +102,10 @@ function callApi(query) {
 			console.log(autocompleteList.getAll())
 			updateAutoCompleteList()
 		})
+		.catch(error => {
+			alert('Error occured:\n', error.message || '')
+			console.log(error)
+		})
 }
 callApi = debounceDecorator(callApi, 400)
 
